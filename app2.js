@@ -1,6 +1,6 @@
 var express = require('express')
 var app = express()
-const cool = require('cool-ascii-faces')
+const cool = require('cool-ascii-facesheroku open cool')
 app.set("view engine", "ejs")
 app.use(express.static(__dirname+"./public/"));
 //app.use('/static', express.static('public'))
