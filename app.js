@@ -6,7 +6,7 @@ app.use(express.static('public'))
 var fs = require('fs')
 var path=require('path')
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/newdb', { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://creativeprotocol:creativeprotocol@cluster0-kdlho.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true });
 var session = require('express-session')
 var _ = require("lodash")
 const Schema = mongoose.Schema;
