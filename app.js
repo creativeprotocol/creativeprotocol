@@ -1,3 +1,4 @@
+const cool = require("cool-ascii-faces")
 var express = require('express')
 var app = express()
 app.set("view engine", "ejs")
@@ -149,6 +150,7 @@ app.post('/register',singleupload, urlencodedParser, (req, res) => {
 
     });
 })
+app.get('/cool', (req, res) => res.send(cool()))
 const checkLogIn = (req, res, next) => {
     if (req.session.task) {
         next();
@@ -182,9 +184,9 @@ app.get('/login/welcome/admitcard',singleupload, (req, res) => {
 
 })
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 5000;
 
 if(process.env.NODE_ENV === 'production')
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log("Server is running")
 })

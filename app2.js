@@ -1,6 +1,6 @@
 var express = require('express')
 var app = express()
-
+const cool = require('cool-ascii-faces')
 app.set("view engine", "ejs")
 app.use(express.static(__dirname+"./public/"));
 //app.use('/static', express.static('public'))
@@ -150,9 +150,9 @@ app.get('/login/multiple', multipleupload, (req, res) => {
 app.post('/login/multiple', multipleupload, (req, res) => {
     res.render('ind', { fileUploaded: true })
 })
+app.get('/cool', (req, res) => res.send(cool()))
+const PORT = process.env.PORT || 5000;
 
-const PORT = process.env.PORT || 8080;
-
-app.listen(3001, () => {
+app.listen(PORT, () => {
     console.log("Server is running")
 })
